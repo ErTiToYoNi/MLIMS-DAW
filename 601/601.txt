@@ -1,0 +1,17 @@
+a.
+    /secondary-school/name
+
+b.
+    /secondary-school/web/text()
+
+c.
+    /secondary-school/cycles/cycle/name
+
+d.
+    //@id
+
+e. 
+   //@year
+
+f.
+   //cycle[@id="MSN"]/*
