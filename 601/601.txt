@@ -15,3 +15,10 @@ e.
 
 f.
    //cycle[@id="MSN"]/*
+
+g.
+  //cycle[grade="Higher"]/name
+  //cycle[grande="Higher"] //name
+
+h.
+  
