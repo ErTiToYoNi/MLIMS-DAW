@@ -2,23 +2,25 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   
 <xsl:template match="/">
-    <cities>
+    <countries>
         <xsl:apply-templates/>
-    </cities>
+    </countries>
 </xsl:template>
 
 <xsl:template match="museum">
 
-    <city>
+    <country>
         <xsl:attribute name="name">
-            <xsl:value-of select="city"/>
-        </xsl:attribute>
-        <xsl:attribute name="country">
             <xsl:value-of select="country"/>
         </xsl:attribute>
         <museum>
+        <xsl:attribute name="museum">
             <xsl:value-of select="name"/>
+        </xsl:attribute>
+        <xsl:attribute name="city">
+            <xsl:value-of select="city"/>
+        </xsl:attribute>
         </museum>
-    </city>
+    </country>
 </xsl:template>
 </xsl:stylesheet>
