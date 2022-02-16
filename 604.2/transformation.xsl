@@ -12,19 +12,24 @@
 
     <xsl:template match="/secondary-school" >
         <h1><xsl:value-of select="name"/></h1>
-        <p>Web page: <a href="http://www.iesabastos.org"><xsl:value-of select="web"/></a></p>
+        <p>Web page:
+            <a>
+                <xsl:attribute name="href" >
+                    <xsl:value-of select="web"/>
+                </xsl:attribute>
+                http://www.iesabastos.org 
+            </a>
+        </p>
+        <xsl:apply-templates/>
     </xsl:template>
 
     <xsl:template match="//cycle" >
         <li><xsl:value-of select="name"/></li>
     </xsl:template>
     
+    <xsl:template match="name" >
+    </xsl:template>
+
+    <xsl:template match="web" >
+    </xsl:template>
 </xsl:stylesheet>
-<p>
-    <a>
-        <xsl:attribute name="href" >
-            http://www.iesabastos.org/
-            <xsl:value-of select="web"/>
-        </xsl:attribute>
-    </a>
-</p>
