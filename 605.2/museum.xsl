@@ -7,10 +7,6 @@
     </museums>
 </xsl:template>
 
-<xsl:template match="museums">
-    <xsl:apply-templates/>
-</xsl:template>
-
 <xsl:template match="museum">
 <museum>
         <name>
