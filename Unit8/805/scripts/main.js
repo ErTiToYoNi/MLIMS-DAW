@@ -14,11 +14,16 @@ function main(){
 
     let ul= document.createElement("ul");
     seleccion.append(ul);
-    let numeroLista=[10];
+   
 
     const selectAllcheckbox = document.createElement("button");
     seleccion.appendChild(selectAllcheckbox);
     selectAllcheckbox.textContent= "Select All";
+
+    const desSelectAllcheckbox = document.createElement("button");
+    seleccion.appendChild(desSelectAllcheckbox);
+    desSelectAllcheckbox.textContent= "Deselect all";
+
     generateInputs(10);
 
     function generateInputs(numberInputs){
@@ -39,21 +44,24 @@ function main(){
             listItem.appendChild(inputNew);
             listItem.appendChild(labelNew);
             labelNew.textContent =  numero;
-            numeroLista[i]= inputNew;
-            selectAllcheckbox.addEventListener("click",selecionarTodo());
         }
     }
 
-    function selecionarTodo(numero){
-       
+    function selecionarTodo(){
+        let numerosListas = document.querySelectorAll('input[type="checkbox"]');
         for( var i=0; i<10;i++){
-             let check = document.querySelector("#checkboxes"+i);
-            check ===true ;
+            numerosListas[i].checked=true;
         }
     }
 
-    for( var i=0; i<10;i++){
-        console.log(numeroLista[i]);
+    function desSelecionarTodo(){
+        let numerosListas = document.querySelectorAll('input[type="checkbox"]');
+        for( var i=0; i<10;i++){
+            numerosListas[i].checked=false;
+        }
     }
+
+    selectAllcheckbox.addEventListener("click",selecionarTodo);
+    desSelectAllcheckbox.addEventListener("click",desSelecionarTodo);
 }
     document.addEventListener("DOMContentLoaded", main);
