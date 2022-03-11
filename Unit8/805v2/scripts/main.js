@@ -78,7 +78,8 @@ function main(){
             numerosListas[i].checked=false;
         }
     }
-    selectAllcheckbox.addEventListener("click",selecionarTodo);
     desSelectAllcheckbox.addEventListener("click",desSelecionarTodo);
+    selectAllcheckbox.addEventListener("click",selecionarTodo);
+
 }
     document.addEventListener("DOMContentLoaded", main);
