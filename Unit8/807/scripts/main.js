@@ -26,10 +26,10 @@ function main() {
     for (let i = 0; i < libros.length; i++) {
         let newParaph = document.createElement('p');
             if(libros[i].alredyRead===true){
-                newParaph.innerHTML = "Ya leiste "+libros[i].title +" by "+ libros[i].autor;
+                newParaph.innerHTML = "You have read "+libros[i].title +" by "+ libros[i].autor;
             }
             else
-                newParaph.innerHTML = "Necesitas leer "+libros[i].title +" by "+ libros[i].autor;
+                newParaph.innerHTML = "You didn't read "+libros[i].title +" by "+ libros[i].autor;
         divLibros.appendChild(newParaph);
     }
 }
