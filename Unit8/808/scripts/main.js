@@ -20,6 +20,7 @@ let harryPotter3 = {
 
 let libros = [harryPotter, harryPotter2, harryPotter3];
 
+// Fuction for show the books in list
 function showbooks(){
 let divLibros = document.querySelector("#books");
    let ul = document.createElement('ul');
@@ -31,6 +32,7 @@ let divLibros = document.querySelector("#books");
         ul.append(li);
    }
 }
+//Fuction for create buttons and add in html
 function createButtons(){
 
     let divLibros = document.querySelector("#books");
@@ -50,30 +52,32 @@ function createButtons(){
     divLibros.append(buttonOrdenateAlfabetic);
 }
 
+//Fuction to ordenate alfabetic Array 
+function ordenarAlfabeticamenteAll(){
+    libros.sort(function (a,b){return (a.title).localeCompare(b.title)});
+    showbooks();
+}
+//Fuction to ordenate reverse alfabetic Array 
+function ordenarAlfabeticamenteAlreves(){
+    libros.sort(function (a,b){return (a.title).localeCompare(b.title)*(-1)});
+    showbooks();
+}
+//Fuction to order as entered in Array 
 function ordenarPrimeros(){
     libros.sort();
     showbooks();
 }
+//Fuction to reverse order as entered in Array 
 function ordenarUltimos(){
-    libros.sort()
+    libros.reverse();
     showbooks();
 }
-
-function compare(a, b) {
-    if (a<b) {
-      return -1;
-    }
-    if (a>b) {
-      return 1;
-    }
-    else
-    return 0;
-  }
 
 function main() {
     let divlistaLibros = document.querySelector("#listalibros");
     let divLibros = document.querySelector("#books");
     
+    //books.html
     if (divlistaLibros == null) {
 
         let p = document.createElement('p');
@@ -86,7 +90,10 @@ function main() {
         ordenarDePrimero.addEventListener('click',ordenarPrimeros);
         const ordenarDeUltimo = document.querySelector('#ordenarUltimo');
         ordenarDeUltimo.addEventListener('click',ordenarUltimos);
+        const ordenarDeAlfabeto= document.querySelector('#ordenarAlfabeticamente');
+        ordenarDeAlfabeto.addEventListener('click',ordenarAlfabeticamenteAll);
     }
+    // index.html
     else {
 
         for (let i = 0; i < libros.length; i++) {
@@ -99,6 +106,5 @@ function main() {
             divlistaLibros.appendChild(newParaph);
         }
     }
-
 }
 document.addEventListener("DOMContentLoaded", main);
