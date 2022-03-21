@@ -55,21 +55,29 @@ function createButtons(){
 //Fuction to ordenate alfabetic Array 
 function ordenarAlfabeticamenteAll(){
     libros.sort(function (a,b){return (a.title).localeCompare(b.title)});
+    let ul = document.querySelector("ul");
+    ulParent = ul.parentNode;
+    ulParent.removeChild(ul);
     showbooks();
 }
 //Fuction to ordenate reverse alfabetic Array 
 function ordenarAlfabeticamenteAlreves(){
     libros.sort(function (a,b){return (a.title).localeCompare(b.title)*(-1)});
-    showbooks();
 }
 //Fuction to order as entered in Array 
 function ordenarPrimeros(){
     libros.sort();
+    let ul = document.querySelector("ul");
+    ulParent = ul.parentNode;
+    ulParent.removeChild(ul);
     showbooks();
 }
 //Fuction to reverse order as entered in Array 
 function ordenarUltimos(){
     libros.reverse();
+    let ul = document.querySelector("ul");
+    ulParent = ul.parentNode;
+    ulParent.removeChild(ul);
     showbooks();
 }
 
@@ -83,8 +91,8 @@ function main() {
         let p = document.createElement('p');
         p.innerHTML = "Show the number of books: " + libros.length;
         divLibros.append(p);
-        showbooks();
         createButtons();
+        showbooks();
 
         const ordenarDePrimero = document.querySelector('#ordenarPrimero');
         ordenarDePrimero.addEventListener('click',ordenarPrimeros);
