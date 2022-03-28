@@ -148,8 +148,4 @@ function removeLast() {
   refreshBooks();
 }
 
-
-
-// index.html
-
 document.addEventListener("DOMContentLoaded", main);
