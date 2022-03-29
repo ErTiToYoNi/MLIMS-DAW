@@ -49,7 +49,6 @@ function main(){
             buttonNext.disabled= false;
         }
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", main);
