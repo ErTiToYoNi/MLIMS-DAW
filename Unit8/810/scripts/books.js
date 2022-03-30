@@ -2,15 +2,19 @@
 
 // Fuction to show the books in list
 function showbooks(divBooks) {
+    localStorage.setItem('books', JSON.stringify(books));
+    books = JSON.parse(localStorage.getItem('books'));
+
   let ul = document.createElement('ul');
   divBooks.append(ul);  
-
+  
   for (let i = 0; i < books.length; i++) {
-    let li = document.createElement('li');
-    li.innerHTML = `${books[i].title} by ${books[i].author}`;
-    ul.append(li);
+      let li = document.createElement('li');
+      li.innerHTML = `${books[i].title} by ${books[i].author}`;
+      ul.append(li); 
   }
 }
+
 function createButton(id, text) {
 
   let button = document.createElement('button');
@@ -60,7 +64,9 @@ function refreshBooks(e) {
   let divBooks = document.querySelector("#books");
   let ul = divBooks.querySelector("ul");
   divBooks.removeChild(ul);
-
+  localStorage.setItem('books', JSON.stringify(books));
+  books = JSON.parse(localStorage.getItem('books'));
+  
   showbooks(divBooks);
 }
 function main() {

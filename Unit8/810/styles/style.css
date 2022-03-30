@@ -1,4 +1,5 @@
-
-div #coverlist{
-    display: flex;
+div { 
+  padding: 0.5em;   
 }
+
+#btn-remove-last, #btn-remove-first { background-color: red;}

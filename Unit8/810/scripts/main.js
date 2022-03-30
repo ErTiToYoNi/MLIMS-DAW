@@ -1,3 +1,4 @@
+
 let harryPotter = {
     title: 'Harry Potter 1',
     author: 'JK Rowling',
@@ -22,3 +23,7 @@ let harryPotter3 = {
 
 
 let books = [harryPotter, harryPotter2, harryPotter3];
+
+let json = JSON.stringify(books);
+localStorage.setItem('books',json);
+
