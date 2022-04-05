@@ -1,6 +1,8 @@
 function main() {
-  let lat = Math.random() * (90-0)+0;  
-  let lon = Math.random() * (180-180)+100;
+  let lat = Math.random() * (90)+0;  
+  let lon = Math.random() * (360)-180;
+  console.log(` ${lat}  ${lon}`);
+
   let API_key = "e402c3f9a5fd952119f647bc002cb83e";
   let units = "metric";
   // Current Weather Data
