@@ -18,9 +18,10 @@ function main() {
   fetch(currentWeatherUrl)
      .then(response => response.text())
      .then(function (result) {
+
         let parser = new DOMParser();
         let api = parser.parseFromString(result, 'text/xml');
-
+      
         let city = api.querySelector("city");
         let temp = api.querySelector("temperature");
         let valuetemp = temp.getAttribute("value");
@@ -32,7 +33,6 @@ function main() {
         let direction = wind.querySelector("direction");
         let valuedirection = direction.getAttribute("value");
 
-   
         nombre.innerHTML = city.getAttribute("name");
         paraph.innerHTML = Date(api);
         paraph2.innerHTML = "TEMP: "+ valuetemp + "°C";
@@ -46,7 +46,5 @@ function main() {
    divdata.append(paraph2);
    divdata.append(paraph3);
    divdata.append(paraph4);
-
 }
-
 document.addEventListener('DOMContentLoaded', main);
