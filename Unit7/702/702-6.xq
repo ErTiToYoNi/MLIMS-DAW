@@ -1,3 +1,7 @@
-for $x in collection("bookstore")/bookstore/book
-let $authors := ($x/author)
-return <authors>{$authors}</authors>
+let $x := collection("bookstore")//book/author
+let $author := distinct-values($x)
+return <books>
+<authors>{
+for $x in $author order by $x
+return<author>{$x}</author>
+}</authors></books>
